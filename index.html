@@ -7,16 +7,18 @@
 </head>
 <body>
     <main>
-        <input type="text">
-        <button>Agregar</button>
+        <h1>To do List</h1>
+        <input type="text" id="inputTarea" placeholder="Título Tarea">
+        <input type="text" id="inputDesc" placeholder="Descripción Tarea">
+        <button id="btnAdd">Agregar</button>
         <section>
-            <h3>Total: </h3>
-            <h3>Realizadas: </h3>
+            <h4>Total: <span id="spanTotal"></span></h4>
+            <h4>Realizadas: <span id="spanHecho"></span></h4>
         </section>
-        <section>
-            <h2>ID</h2>
-            <h2>TAREA</h2>
-        </section>
+        <ul id="tareaList"></ul>
+        <h3>Tarea</h3>
+        <h3>Descripción</h3>
     </main>
+    <script src="lista.js"></script>
 </body>
 </html>
