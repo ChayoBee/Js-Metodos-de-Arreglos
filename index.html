@@ -4,19 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista de Tareas Pendientes</title>
+    <link rel="stylesheets" href="./assets/Stylesheets/style.css"/>
 </head>
 <body>
-    <main>
+    <main class="box">
         <h1>To do List</h1>
         <input type="text" id="inputTarea" placeholder="Título Tarea">
         <button id="btnAdd">Agregar</button>
-        <section>
+        <section class="count">
             <h4>Total: <span id="spanTotal"></span></h4>
             <h4>Realizadas: <span id="spanHecho"></span></h4>
         </section>
-        <h3>Tarea</h3>
-        <h3>Descripción</h3>
-        <ul id="tareaList"></ul>
+        <section class="tabla">
+            <h3>Tarea</h3>
+            <h3>Descripción</h3>
+            <ul class="lista" id="tareaList"></ul>
+        </section>
     </main>
     <script src="./assets/JavaScript/lista.js"></script>
 </body>

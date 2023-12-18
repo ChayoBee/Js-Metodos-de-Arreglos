@@ -13,7 +13,6 @@ let tareas = [
 ];
 
 const contador = () => {
-    lista.innerHTML = ""
     total.innerHTML = tareas.length;
     hecho.innerHTML = tareas.filter((tarea) => tarea.done == true).length
   };
@@ -38,11 +37,12 @@ function renderTareas(tareas) {
         <div>
         <li>${tarea.id} ${tarea.name}
         <input type="checkbox" ${tarea.done ? 'checked' : ''} onchange = "checkea(${tarea.id})">
-        <div onclick = 'borrar(${tarea.id})'>❌</div>
+        <div class = "boton" onclick = 'borrar(${tarea.id})'>❌</div>
         </li>
         </div>`
     };
     lista.innerHTML = html;
+    contador();
 };
 renderTareas(tareas);
 
@@ -56,6 +56,13 @@ btnAdd.addEventListener("click", () => {
     
    renderTareas(tareas);
 });
+
+const checkea = (id) => {
+    const tarea = tareas.find(t => t.id === id);
+    tarea.done = !tarea.done;
+    contador();
+    renderTareas();
+};
 
 function borrar(id){
     const index = tareas.findIndex((elemento) => elemento.id == id);

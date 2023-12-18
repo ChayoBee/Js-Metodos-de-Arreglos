@@ -1,0 +1,18 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@mixin flex ($f, $j, $i){
+    display: $f;
+    justify-content: $j;
+    align-items: $i;
+}
+
+.box {
+    @include flex(flex, center, center);
+    .list {
+        @include flex(flex, center, center);
+    }
+}
