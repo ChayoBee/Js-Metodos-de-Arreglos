@@ -12,23 +12,14 @@ let tareas = [
     { id: 3, name: ' Ir a buscar los llaveros', done: false}
 ];
 
+let newID = 4;
+
 const contador = () => {
     total.innerHTML = tareas.length;
     hecho.innerHTML = tareas.filter((tarea) => tarea.done == true).length
   };
   
   contador(tareas); 
-
-
-
-/*const contadores = () => {
-    lista.innerHTML = "";
-    const totalTareas = tareas.length;
-    const totalHecho = tareas.filter(t => t.done == true).length;
-    total.textContent = `${totalTareas}`;
-    hecho.textContent = `${totalHecho}`;
-};
-contadores(tareas); */
 
 function renderTareas(tareas) {
     let html = '';
@@ -48,9 +39,13 @@ renderTareas(tareas);
 
 btnAdd.addEventListener("click", () => {
     const nameTarea = titulo.value;
-    const nuevaTarea = {id: tareas.length +1, name:nameTarea, done: false};
-
-    tareas.push(nuevaTarea);
+    if (nameTarea.trim() != ''){
+        const nuevaTarea = {id: newID, name:nameTarea, done: false};
+        tareas.push(nuevaTarea);
+        newID++
+    } else {
+        alert('Por favor ingresa una tarea')
+    };
     //titulo.value= '';
 
     
